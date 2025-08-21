@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TechSupport Logger</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>📞 TechSupport Logger</h1>
+
+  <form id="callForm">
+    <input type="text" id="staff" placeholder="Support Staff Name" required />
+    <input type="text" id="customer" placeholder="Customer Name" required />
+    <input type="datetime-local" id="timestamp" required />
+    <textarea id="reason" placeholder="Reason for Call" required></textarea>
+    <button type="submit">Log Call</button>
+  </form>
+
+  <div class="controls">
+    <input type="text" id="searchInput" placeholder="Search by Staff or Customer" />
+    <button onclick="exportCSV()">Export CSV</button>
+    <button onclick="clearLogs()">Clear All Logs</button>
+  </div>
+
+  <div id="summary">
+    <p><strong>Total Calls:</strong> <span id="totalCalls">0</span></p>
+  </div>
+
+  <h2>📋 Logged Calls</h2>
+  <table id="callTable">
+    <thead>
+      <tr>
+        <th>Staff</th><th>Customer</th><th>Time</th><th>Reason</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="utils.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
