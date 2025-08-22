@@ -1,0 +1,14 @@
+function deleteLog(button) {
+  const row = button.closest("tr");
+  const index = row.rowIndex - 1; // Adjust if header exists
+
+  if (confirm("Are you sure you want to delete this log?")) {
+    // Remove from localStorage
+    let logs = JSON.parse(localStorage.getItem("supportLogs")) || [];
+    logs.splice(index, 1);
+    localStorage.setItem("supportLogs", JSON.stringify(logs));
+
+    // Remove from table
+    row.remove();
+  }
+}
