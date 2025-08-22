@@ -1,0 +1,9 @@
+<tr>
+  <td>Customer Name</td>
+  <td>Issue Description</td>
+  <td>Timestamp</td>
+  <td>
+    <button onclick="editLog(this)">Edit</button>
+    <button onclick="deleteLog(this)">Delete</button>
+  </td>
+</tr>
