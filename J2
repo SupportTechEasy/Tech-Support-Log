@@ -1,0 +1,19 @@
+function editLog(button) {
+  const row = button.closest("tr");
+  const cells = row.querySelectorAll("td");
+
+  const customer = prompt("Edit Customer Name:", cells[0].textContent);
+  const issue = prompt("Edit Issue Description:", cells[1].textContent);
+
+  if (customer && issue) {
+    cells[0].textContent = customer;
+    cells[1].textContent = issue;
+
+    // Update localStorage
+    let logs = JSON.parse(localStorage.getItem("supportLogs")) || [];
+    const index = row.rowIndex - 1;
+    logs[index].customer = customer;
+    logs[index].issue = issue;
+    localStorage.setItem("supportLogs", JSON.stringify(logs));
+  }
+}
